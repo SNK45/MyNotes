@@ -1,0 +1,156 @@
+<!-- MyNotes HMTL Layout by Srinath Kadambi ----------------------------------------------------------------------------------------------->
+
+<!-- General header of the html document. This website uses XHTML Strict and uses Javascript. ----------------------------------------------------->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>MyNotes</title>
+
+<!-- This is the CSS reference. The name of the file is notes.css --------------------------------------------------------------------------------->
+
+<link rel="stylesheet" href="notes.css" type="text/css" media="screen" charset="utf-8" />
+
+<!-- Javascript Functions ------------------------------------------------------------------------------------------------------------------------->
+
+<script type = 'text/javascript'>
+
+	var num_tables = 1;
+	
+	function attach(){
+		myin = document.getElementById("inline1");
+		myin.onclick = forCheckBox;
+		document.getElementById('test').value = "damn homie!";
+	}
+	
+	function forCheckBox(){
+		if (this.checked){
+			document.getElementById('test').value = "checked";
+		}
+		else{
+			document.getElementById('test').value = "unchecked";
+		}
+	}
+	
+	function changeToInline(tableID){
+	
+		var mytable = document.getElementById(tableID);
+		var txtvalue = mytable.getElementById("txt");
+		var cell1 = mytable.row(0).insertCell(1);
+		var element = document.createElement("input");
+		element.type = "text";
+		element.id = "txt";
+		element.value = txtvalue;
+		cell1.appendChild(element);
+		mytable.deleteRow(1);
+		
+		
+	}
+	
+	function changeToRow(tableID){
+		
+	}
+	
+	function addRowToMain(){
+	
+	<!-- Declarataion of variables -->
+	
+		var heading = "Question";
+		var checkText = "Inline";
+		var txtBoxHint = "enter text...";
+		mainTable = document.getElementById("main");
+		
+	<!-- Creating new row in main table and inserting a new table in the row -->
+	
+		var tCount = mainTable.rows.length;
+        var newRow = mainTable.insertRow(tCount);
+		var newTable = document.createElement("table");
+		
+		var cell = newRow.insertCell(0);
+		cell.appendChild(newTable);
+		
+	<!-- Add elements to the new table ----------------------------------------->
+	
+		var rowOne = newTable.insertRow(0);
+		var cellOne = rowOne.insertCell(0);
+		
+		var eOne = document.createElement("input");
+		eOne.type = "text";
+		eOne.value = "Question";
+		eOne.id = "qhead" + mainTable.rows.length;
+		cellOne.appendChild(eOne);
+		
+		var cellTwo = rowOne.insertCell(1);
+		var eTwo = document.createElement("input");
+		eTwo.type = "checkbox";
+		eTwo.value = "Inline";
+		eTwo.id = "inline" + mainTable.rows.length;
+		cellTwo.appendChild(eTwo);
+		
+		var rowTwo = newTable.insertRow(1);
+		var cellThree = rowTwo.insertCell(0);
+		
+		var eThree = document.createElement("input")
+		eThree.type = "text";
+		eThree.value = "enter text...";
+		eThree.id = "txt" + mainTable.rows.length;
+		
+		cellThree.appendChild(eThree);
+		
+		
+	}
+
+	
+	function getParent(ID){	
+		return getElementById(ID).parentNode.id;
+	}
+
+</script>
+
+<p id = "h1">My Notes<p> 
+</head>
+
+<body onload = "attach()">
+	<table id = "main">
+		<tr>
+			<td>
+			<table id = "table1">
+				<tr>
+					<td>
+						<form>
+							<input type="text" id="qhead1" value="Question" />
+						</form>
+					</td>
+					<td>
+						<form>
+						
+						</form>
+					</td>
+					<td>
+						<form>
+							<input type="checkbox" id="inline1">Inline</input>
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<form>
+							<input type="text" id="txt1" value="enter text..."/>
+						</form>
+					</td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+	<table>
+	<div id = "buttons">
+		<button id = "newitem" onclick = "addRowToMain()">New Item</button><br>
+		<input id = "submit" type = "submit" value = "Submit" />
+		<input id = "test" type = "text" value = "Hi!" />
+	</div>
+
+</body>
+</html>
+
+<!-- End of the XHTML Document -------------------------------------------------------------------------------------------------------------------->

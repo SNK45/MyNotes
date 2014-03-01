@@ -1,6 +1,8 @@
+<!-- HTML Document with AngularJS for MyNotes application by Srinath Kadambi ----------------------------------------------->
+
 <!doctype html>
 
-<!-- Initialization of AngularJS ----------------------------------------------------------------------->
+<!-- Initialization of AngularJS ------------------------------------------------------------------------------------------->
 <html ng-app>
 	<head>
 	   <title>My Notes</title>
@@ -8,22 +10,36 @@
 	   </script>
 	   <script src="mynotes.js"></script>
 	   
-	   <!-- Link to CSS sheet for styling -------------------------------------------------------------->
+	   <!-- Link to CSS sheet for styling ---------------------------------------------------------------------------------->
 	   
 	   <link rel="stylesheet" href="notes.css" type="text/css" media="screen" charset="utf-8" />
 	</head>
+	
+	<!-- Initialize controller for the body -------------------------------------------------------------------------------->
+	
 	<body ng-controller = "NotesControl">
+	
+	<!-- Heading for the application --------------------------------------------------------------------------------------->
+	
 		<div>
 			<h1>{{notesTitle.title}}</h1>
 		</div>
 		
-		<div>
+	<!-- Table which will contain the questions and answers ----------------------------------------------------------------->
+	
+		<div id = "maintable">
 			<input type="checkbox", ng-model="boolIn"/>
-			<span>Inline</span>
+			<span>{{inlineT.text}}</span>
 			<table>
 				<tbody>
+	<!-- Iterate over an array which will be updated dynamically by the New Item button ------------------------------------->
+	
 					<tr ng-repeat="num in tableitems">
 						<td class = "inline-{{boolIn}}">
+						
+	<!-- My idea was to assign a model to the question and answer separately with a number to distinguish them --------------->
+	<!-- However this was not completed in time ------------------------------------------------------------------------------>
+	
 							<input class="bold-true" type = "text" placeholder = "Question" ngmodel = "$parent.{{num}}"/>
 						</td>
 						<td class = "inline-{{boolIn}}">
@@ -33,13 +49,17 @@
 				</tbody>
 			</table>
 		</div>
-		
+
 		<br />
+		
+	<!-- Buttons required for application ------------------------------------------------------------------------------------>	
+	
 		<div>
 			<button value = "New Item" ng-click="addRow()">New Item</button>
+			<br />
 			<button  value = "Submit" ng-click="toJSON()">Submit</button>
-			<input class="bold-false" type = "text" placeholder = "enter text..." ng-model = "zz"/>
-			<span>{{qmodel1}}</span>
 		</div>
 	</body>
 </html>
+
+<!-- End of document -------------------------------------------------------------------------------------------------------->

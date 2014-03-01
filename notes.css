@@ -1,11 +1,21 @@
 /* CSS Document to accompany the MyNotes web application by Srinath Kadambi -------------------------------------------- */
 
+/* Make the heading bold and a bigger font ----------------------------------------------------------------------------- */
+
 #h1 {
 	margin-left: 30px;
 	font-weight: bold;
 	font-size:40px;
 	color: black;
 }
+
+/* Make the background of the main table lightgray --------------------------------------------------------------------- */
+
+#maintable{
+	background-color: Lightgray;
+}
+
+/* Change the font and font-color of placeholders for all browsers ----------------------------------------------------- */
 
 ::-moz-placeholder {
    color: black;  
@@ -21,10 +31,15 @@
 	color:black; 
 }
 
+/* This is for the "Question field as it is required to be bold -------------------------------------------------------- */
 
 .bold-true{
 	font-weight:bold;
+	background-color: Lightgray;
+	border:none;
 }
+
+/* This is required to manipulate the display of table cell elements --------------------------------------------------- */
 
 .inline-false{
 	display:block;
@@ -34,3 +49,8 @@
 	display:inline;
 }
 
+div{
+	width: 500px;
+}
+
+/* End of document ---------------------------------------------------------------------------------------------------- */

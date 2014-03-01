@@ -1,32 +1,40 @@
+/* Javascript (AngularJS) Document to accompany the MyNotes web application by Srinath Kadambi ------------------------------- */
+
+/* Define Controller as NotesControl ----------------------------------------------------------------------------------------- */
+
 function NotesControl($scope){
+
+/* Variables defined as strings for use in HTML document --------------------------------------------------------------------- */
 
 	$scope.notesTitle = {};
 	$scope.notesTitle.title = "My Notes";
 	
 	$scope.inlineT = {};
-	$scope.inlineT.title = "Inline"
+	$scope.inlineT.text = "Inline"
 	
-	$scope.stuff = {};
-	$scope.stuff.text = "ADSF";
+/* Boolean variable to check whether questions and answers are inline -------------------------------------------------------- */
 	
 	$scope.boolIn = false;
 	
+/* Array defined to hold string naems of models but currently not working completely ----------------------------------------- */
 		
 	$scope.tableitems = [];
 	$scope.tableitems.push("qmodel1");
 	$scope.rowCount = 1;
-		//[{text:'Question', bold:true}, {text:'enter text...', bold:false}]
-	//];
+
+/* Object array to be converted to JSONString -------------------------------------------------------------------------------- */
 	
 	var JSONItems = [];
 	var myJSON = "";
 	
+/* Function to add a row to the main table for anotehr question and answer --------------------------------------------------- */
 
 	$scope.addRow = function(){
 		$scope.rowCount++;
 		$scope.tableitems.push($scope.rowCount);
-		//$scope.tableitems.push([{text:"Question", bold:true}, {text:'enter text...', bold:false}]);
 	};
+	
+/* Function to convert object array into JSONString but is currently not working---------------------------------------------- */
 	
 	/*
 	$scope.toJSON = function(){
@@ -50,3 +58,5 @@ function NotesControl($scope){
 	};
 	*/
 }
+
+/* End of document ----------------------------------------------------------------------------------------------------------- */
