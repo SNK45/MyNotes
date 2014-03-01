@@ -16,7 +16,8 @@ function NotesControl($scope){
 	
 	$scope.boolIn = false;
 	
-/* Array defined to hold string naems of models but currently not working completely ----------------------------------------- */
+/* Array defined to hold string naems of models but currently not working and needs to be modified!!!------------------------- */
+/* Different approach described in word document ----------------------------------------------------------------------------- */
 		
 	$scope.tableitems = [];
 	$scope.tableitems.push("qmodel1");
@@ -27,14 +28,14 @@ function NotesControl($scope){
 	var JSONItems = [];
 	var myJSON = "";
 	
-/* Function to add a row to the main table for anotehr question and answer --------------------------------------------------- */
+/* Function to add a row to the main table for another question and answer --------------------------------------------------- */
 
 	$scope.addRow = function(){
 		$scope.rowCount++;
 		$scope.tableitems.push($scope.rowCount);
 	};
 	
-/* Function to convert object array into JSONString but is currently not working---------------------------------------------- */
+/* Function to convert object array into JSONString but is currently not working and needs to be modified!!! ----------------- */
 	
 	/*
 	$scope.toJSON = function(){

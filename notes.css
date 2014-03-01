@@ -9,10 +9,22 @@
 	color: black;
 }
 
-/* Make the background of the main table lightgray --------------------------------------------------------------------- */
+/* Make the background of the main table lightgray and add border to it ------------------------------------------------ */
 
 #maintable{
 	background-color: Lightgray;
+	border-style: dashed;
+	border-width: 0.5px;
+	border-color: gray;
+}
+
+#buttons{
+	length = 400px;
+}
+
+#submitbtn{
+	margin-top: 40px;
+	margin-left: 440px;
 }
 
 /* Change the font and font-color of placeholders for all browsers ----------------------------------------------------- */
@@ -52,5 +64,7 @@
 div{
 	width: 500px;
 }
+
+
 
 /* End of document ---------------------------------------------------------------------------------------------------- */
