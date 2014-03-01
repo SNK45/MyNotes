@@ -1,0 +1,41 @@
+<!doctype html>
+
+<!-- Initialization of AngularJS ----------------------------------------------------------------------->
+<html ng-app>
+	<head>
+	   <title>My Notes</title>
+	   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js">
+	   </script>
+	   <script src="mynotes.js"></script>
+	   
+	   <!-- Link to CSS sheet for styling -------------------------------------------------------------->
+	   
+	   <link rel="stylesheet" href="notes.css" type="text/css" media="screen" charset="utf-8" />
+	</head>
+	<body ng-controller = "NotesControl">
+		<div>
+			<h1>{{notesTitle.title}}</h1>
+		</div>
+		
+		<div>
+			<input type="checkbox", ng-model="boolIn"/>
+			<span>Inline</span>
+			<table>
+				<tbody>
+					<tr ng-repeat="note in tableitems">
+						<td ng-repeat="item in note" class = "inline-{{boolIn}}">
+							<input class="bold-{{item.bold}}" type = "text" placeholder = "{{item.text}}"/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<br />
+		<div>
+			<button value = "New Item" ng-click="addRow()">New Item</button>
+			<button  value = "Submit" ng-click="toJSON()">Submit</button>
+			<span>{{stuff.text}}</span>
+		</div>
+	</body>
+</html>

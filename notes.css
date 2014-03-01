@@ -1,0 +1,36 @@
+/* CSS Document to accompany the MyNotes web application by Srinath Kadambi -------------------------------------------- */
+
+#h1 {
+	margin-left: 30px;
+	font-weight: bold;
+	font-size:40px;
+	color: black;
+}
+
+::-moz-placeholder {
+   color: black;  
+   opacity:1;
+}
+
+:-moz-placeholder {
+   color: black;  
+   opacity:1;
+}
+
+::-webkit-input-placeholder {
+	color:black; 
+}
+
+
+.bold-true{
+	font-weight:bold;
+}
+
+.inline-false{
+	display:block;
+}
+
+.inline-true{
+	display:inline;
+}
+
